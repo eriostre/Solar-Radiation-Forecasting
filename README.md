@@ -31,5 +31,5 @@ Cross-validation was used as an experimental procedure during model training. Th
 - Experiment 5: 30-day forecasting ahead
 Following the evaluation of Prophet, XGBoost, and LSTM models, the most accurate forecasting framework was selected based on the results of Experiments 1 to 4. These final architectures were then retrained using the full ten-year dataset, enabling each model to exploit all available information before generating the short-term forecast.
 
-
+#
 Overall, this research provides a comparative framework for solar radiation forecasting in data-constrained environments and contributes to the broader understanding of how different modelling paradigms behave under varying preprocessing strategies. The results offer practical utility for future time-series forecasting research.

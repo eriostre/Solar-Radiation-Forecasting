@@ -51,6 +51,7 @@ Physically implausible observations were examined using statistical screening an
 validation, observe Figure 3. Genuine weather extremes were retained, while implausible observations were corrected where justified.
 <img width="844" height="377" alt="image" src="https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/Screenshot%202025-11-27%20010532.png" />
 Figure 3: implausible observation in Dublin’s wind gust feature.
+
 The data were divided chronologically, with the oldest 80% used for model training and the
 most recent 20% used for testing, as illustrated in Figure 4.
 <img width="844" height="377" alt="image" src="https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/train_and_test_data.png" />
@@ -71,7 +72,7 @@ scaled input sequences. The selected primary configuration used 96 recurrent uni
 
 # Visualisation Results
 
-
+<img width="844" height="377" alt="image" src="https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/xgboost_results.png" />
 Figure 5: Forecast vs Actual data by XGBoost Model.
 <img width="844" height="377" alt="image" src="https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/prophet_results.png" />
 Figure 6: Forecast vs Actual data by Prophet Model
@@ -79,3 +80,11 @@ Figure 6: Forecast vs Actual data by Prophet Model
 <img width="844" height="377" alt="image" src="https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/lstm_results.png" />
 Figure 7: Forecast vs Actual data by LSTM Model.
 
+# Conclusion
+This study compared Prophet, XGBoost, and LSTM for daily solar radiation forecasting using ten
+years of meteorological data from Dublin, Ireland. XGBoost achieved the strongest performance,
+Prophet produced competitive results, and LSTM performed less effectively.
+The findings demonstrate that a more complex deep learning architecture does not necessarily
+provide superior forecasting accuracy for a moderate-sized, strongly seasonal meteorological dataset.
+The results support systematic model comparison and careful feature engineering when selecting
+forecasting approaches for solar-resource applications.

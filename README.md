@@ -31,5 +31,51 @@ Cross-validation was used as an experimental procedure during model training. Th
 - Experiment 5: 30-day forecasting ahead
 Following the evaluation of Prophet, XGBoost, and LSTM models, the most accurate forecasting framework was selected based on the results of Experiments 1 to 4. These final architectures were then retrained using the full ten-year dataset, enabling each model to exploit all available information before generating the short-term forecast.
 
-#
-Overall, this research provides a comparative framework for solar radiation forecasting in data-constrained environments and contributes to the broader understanding of how different modelling paradigms behave under varying preprocessing strategies. The results offer practical utility for future time-series forecasting research.
+# Data Preparation
+Data preparation included quality assessment, missing-value handling, outlier screening, exploratory
+analysis, and feature selection.
+The analysis identified strong annual seasonality in solar radiation as Figure 1 illustrates.
+Meteorological variables such as temperature, humidity, cloud cover, and wind-related measurements
+were considered as potential predictors.
+
+<img width="844" height="377" alt="image" src="https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/dublin_temperature.png" />
+Figure 1: showing a Dublin’s temperature time series. Strong seasonality is observed.
+
+Variables with strong correlation or potential information leakage were excluded where appropriate, as observed in Figure 2. Solar energy and UV index were not used as predictors because of
+their strong relationship with solar radiation.
+<img width="844" height="377" alt="image" src="https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/pearson_spearman_correlation.png" />
+Figure 2: correlation between features and solar radiation. Strong relationship is observed across
+’solar energy’ and ’UV index’.
+
+Physically implausible observations were examined using statistical screening and domain
+validation, observe Figure 3. Genuine weather extremes were retained, while implausible observations were corrected where justified.
+<img width="844" height="377" alt="image" src="https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/Screenshot%202025-11-27%20010532.png" />
+Figure 3: implausible observation in Dublin’s wind gust feature.
+The data were divided chronologically, with the oldest 80% used for model training and the
+most recent 20% used for testing, as illustrated in Figure 4.
+<img width="844" height="377" alt="image" src="https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/train_and_test_data.png" />
+
+Figure 4: split on the data. The fist chronologically 80% is intended for training the models, whilethe 20% resting data will be used for testing purposes.
+
+# Forecasting Models
+## Prophet
+Prophet was used as the representative statistical forecasting model. The selected primary configuration used linear growth, additive seasonality, yearly seasonality of 16 Fourier terms, weeklyseasonality of 5 Fourier terms, and tuned changepoint and prior-scale parameters.
+## XGBoost
+XGBoost was used as the representative machine learning model. The model incorporated temporal
+and meteorological predictors. Hyperparameter optimisation was performed using randomized
+search. The selected primary configuration included 1317 estimators, maximum depth of 3, learning
+rate of approximately 0.0242, and tuned subsampling and column-sampling parameters.
+## Long Short-Term Memory
+LSTM was used as the deep learning model. The network learned sequential relationships from
+scaled input sequences. The selected primary configuration used 96 recurrent units, a learning rateof 0.003, and a dense layer containing 32 units. Early stopping was used during training.
+
+# Visualisation Results
+
+
+Figure 5: Forecast vs Actual data by XGBoost Model.
+<img width="844" height="377" alt="image" src="https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/prophet_results.png" />
+Figure 6: Forecast vs Actual data by Prophet Model
+
+<img width="844" height="377" alt="image" src="https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/lstm_results.png" />
+Figure 7: Forecast vs Actual data by LSTM Model.
+

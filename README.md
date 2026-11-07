@@ -42,3 +42,35 @@ Meteorological variables such as temperature, humidity, cloud cover, and wind-re
 were considered as potential predictors.
 
 <img width="844" height="377" alt="image" src="https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/dublin_temperature.png" />
+Figure 1: showing a Dublin’s temperature time series. Strong seasonality is observed.
+
+Variables with strong correlation or potential information leakage were excluded where appropriate, as observed in Figure 2. Solar energy and UV index were not used as predictors because of
+their strong relationship with solar radiation.
+<img width="844" height="377" alt="image" src="https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/pearson_spearman_correlation.png" />
+Figure 2: correlation between features and solar radiation. Strong relationship is observed across
+’solar energy’ and ’UV index’.
+
+Physically implausible observations were examined using statistical screening and domain
+validation, observe Figure 3. Genuine weather extremes were retained, while implausible observations
+were corrected where justified.
+<img width="844" height="377" alt="image" src="https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/Screenshot%202025-11-27%20010532.png" />
+Figure 3: implausible observation in Dublin’s wind gust feature.
+The data were divided chronologically, with the oldest 80% used for model training and the
+most recent 20% used for testing, as illustrated in Figure 4.
+<img width="844" height="377" alt="image" src="https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/train_and_test_data.png" />
+
+Figure 4: split on the data. The fist chronologically 80% is intended for training the models, whilethe 20% resting data will be used for testing purposes.
+
+# Forecasting Models
+## 5.1 Prophet
+Prophet was used as the representative statistical forecasting model. The selected primary configuration used linear growth, additive seasonality, yearly seasonality of 16 Fourier terms, weekly
+seasonality of 5 Fourier terms, and tuned changepoint and prior-scale parameters.
+5.2 XGBoost
+XGBoost was used as the representative machine learning model. The model incorporated temporal
+and meteorological predictors. Hyperparameter optimisation was performed using randomized
+search. The selected primary configuration included 1317 estimators, maximum depth of 3, learning
+rate of approximately 0.0242, and tuned subsampling and column-sampling parameters.
+5.3 Long Short-Term Memory
+LSTM was used as the deep learning model. The network learned sequential relationships from
+scaled input sequences. The selected primary configuration used 96 recurrent units, a learning rate
+of 0.003, and a dense layer containing 32 units. Early stopping was used during training

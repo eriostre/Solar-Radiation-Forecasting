@@ -33,3 +33,12 @@ Following the evaluation of Prophet, XGBoost, and LSTM models, the most accurate
 
 #
 Overall, this research provides a comparative framework for solar radiation forecasting in data-constrained environments and contributes to the broader understanding of how different modelling paradigms behave under varying preprocessing strategies. The results offer practical utility for future time-series forecasting research.
+
+# Data Preparation
+Data preparation included quality assessment, missing-value handling, outlier screening, exploratory
+analysis, and feature selection.
+The analysis identified strong annual seasonality in solar radiation as Figure 1 illustrates.
+Meteorological variables such as temperature, humidity, cloud cover, and wind-related measurements
+were considered as potential predictors.
+
+<img width="844" height="377" alt="image" src="[https://github.com/eriostre/Stock-Market-Forecasting-Using-Twitter-as-Exogenous-Data/blob/main/images/Picture1.png](https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/line_plot1.html)" />

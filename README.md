@@ -41,4 +41,4 @@ The analysis identified strong annual seasonality in solar radiation as Figure 1
 Meteorological variables such as temperature, humidity, cloud cover, and wind-related measurements
 were considered as potential predictors.
 
-<img width="844" height="377" alt="image" src="https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/line_plot1.html" />
+<img width="844" height="377" alt="image" src="https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/dublin_temperature.png" />

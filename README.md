@@ -39,6 +39,7 @@ Meteorological variables such as temperature, humidity, cloud cover, and wind-re
 were considered as potential predictors.
 
 <img width="844" height="377" alt="image" src="https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/dublin_temperature.png" />
+
 Figure 1: showing a Dublin’s temperature time series. Strong seasonality is observed.
 
 Variables with strong correlation or potential information leakage were excluded where appropriate, as observed in Figure 2. Solar energy and UV index were not used as predictors because of
@@ -51,6 +52,7 @@ Figure 2: correlation between features and solar radiation. Strong relationship 
 Physically implausible observations were examined using statistical screening and domain
 validation, observe Figure 3. Genuine weather extremes were retained, while implausible observations were corrected where justified.
 <img width="844" height="377" alt="image" src="https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/Screenshot%202025-11-27%20010532.png" />
+
 Figure 3: implausible observation in Dublin’s wind gust feature.
 
 The data were divided chronologically, with the oldest 80% used for model training and the
@@ -82,7 +84,7 @@ Figure 6: Forecast vs Actual data by Prophet Model
 Figure 7: Forecast vs Actual data by LSTM Model.
 
 # Experiment Results
-<img width="844" height="377" alt="image" src="https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/table_results.png" />
+<img width="800" height="800" alt="image" src="https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/table_results.png" />
 
 Figure 8: Results of Model's Statistical Evaluation Metrics Across Experiments
 

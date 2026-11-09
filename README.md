@@ -80,6 +80,12 @@ Figure 6: Forecast vs Actual data by Prophet Model
 <img width="844" height="377" alt="image" src="https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/lstm_results.png" />
 Figure 7: Forecast vs Actual data by LSTM Model.
 
+# Experiment Results
+<img width='844' height='377' alt='image'src='https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/table_results.png' />
+Figure 8: Results of Model's Statistical Evaluation Metrics Across Experiments
+
+Across all experiments, XGBoost consistently delivered the strongest performance, particularly in Experiment 1 and Experiment 3, achieving the highest R² values and lowest error scores.
+
 # Conclusion
 This study compared Prophet, XGBoost, and LSTM for daily solar radiation forecasting using ten
 years of meteorological data from Dublin, Ireland. XGBoost achieved the strongest performance,

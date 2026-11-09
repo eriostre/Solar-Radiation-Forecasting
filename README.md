@@ -44,6 +44,7 @@ Figure 1: showing a Dublin’s temperature time series. Strong seasonality is ob
 Variables with strong correlation or potential information leakage were excluded where appropriate, as observed in Figure 2. Solar energy and UV index were not used as predictors because of
 their strong relationship with solar radiation.
 <img width="844" height="377" alt="image" src="https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/pearson_spearman_correlation.png" />
+
 Figure 2: correlation between features and solar radiation. Strong relationship is observed across
 ’solar energy’ and ’UV index’.
 
@@ -81,7 +82,8 @@ Figure 6: Forecast vs Actual data by Prophet Model
 Figure 7: Forecast vs Actual data by LSTM Model.
 
 # Experiment Results
-<img width='844' height='377' alt='image'src='https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/table_results.png' />
+<img width="844" height="377" alt="image" src="https://github.com/eriostre/Solar-Radiation-Forecasting/blob/main/captures/table_results.png" />
+
 Figure 8: Results of Model's Statistical Evaluation Metrics Across Experiments
 
 Across all experiments, XGBoost consistently delivered the strongest performance, particularly in Experiment 1 and Experiment 3, achieving the highest R² values and lowest error scores.
